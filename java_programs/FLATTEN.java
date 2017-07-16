@@ -16,16 +16,14 @@ public class FLATTEN {
 	    ArrayList result = new ArrayList(50);
 	    for (Object x : narr) {
                 if (x instanceof ArrayList) {
-	            for (Object y : (ArrayList) flatten(x)) {
-	                result.add(y);
-	            }
+                    result.addAll((ArrayList) flatten(x));
                 } else {
-			result.add(flatten(x));
+                    result.add(flatten(x));
 		}
             }
             return result;
 	} else {
-	    return arr;
+	    return flatten(arr);
 	}
     }
 }
