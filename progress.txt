@@ -1,0 +1,103 @@
+Total: 40 Python programs, given by Quixey, in correct and incorrect versions
+Java is missing is_valid_parenthesization and topological_ordering
+some algorithms require other objects to exist in the environment/namespace
+how can I reference Nodes programmatically?
+
+Notes:
+JSON only has Number. The JavaDeserializer has a workaround for Integers.
+This restricts us to using Integers, Floats, and Strings in the JSON testcases.
+JSON strings must use doublequotes, otherwise GSON throws MalformedJsonExceptions.
+Unfortunately Python treats single and double quotes identically, and outputs with single quotes. Thus we use reenconding into (compact) JSON.
+
+
+Complete:
+bitcount: infinite while loop in buggy versions
+bucketsort: fine
+find_first_in_sorted: fine
+find_in_sorted: fine
+flatten: compiles fine, but Java lacks generators and so buggy version gives same output :(
+gcd: looks fine, recursion depth exceeded / stackoverflow
+get_factors: fine
+hanoi: fine
+is_valid_parenthesization: fine, could use more testcases
+kheapsort: fine
+kth: fine
+lis: fine
+longest_common_subsequence: fine
+lcs_length: fine
+levenshtein: fine
+max_sublist_sum: fine
+mergesort: fine
+next_palindrome: fine
+next_permutation: fine
+pascal: fine
+possible_change: fine
+powerset: fine
+quicksort: fine
+rpn_eval: fine
+shunting_yard: fine
+sieve: fine
+sqrt: fine
+subsequences: fine
+to_base: fine
+wrap: fine
+
+Worked:
+
+
+
+Unworked: (no testcases, except knapsack)
+breadth_first_search
+depth_first_search
+detect_cycle
+knapsack - hard input
+minimum_spanning_tree
+reverse_linked_list
+shortest_path_length
+shortest_path_lengths
+shortest_paths
+topological_ordering
+
+
+Datatypes/Structures:
+bitcount: nonnegative int, N -> N
+bucketsort: list of small ints, upperbound of size of ints in arr. So array access by indexing, array extension, getindex, index retrieval
+flatten: array, list. really it's a heterogeneous list (nested list structure) or tree. outputs a generator 
+find_first_in_sorted: array, sorted list of ints and an int value to find
+find_in_sorted: array, sorted list of ints
+gcd: nonnegative ints, modulo
+get_factors: **, %, int, return list of ints
+hanoi: int, returns ordered list of pairs, requires array with extend, append, and pop
+is_valid_parenthesization: string, iterating over string, returns Boolean
+kheapsort: heapq, heapify, heappushpop, heappop, yield, returns generator
+kth: list of ints, array, len of list, list comprehension to split
+longest_common_subsequence: string, string, recursion, max function by key, cutting the string
+lcs_length: from collections import Counter, string, some way to get values of the Counter
+levenshtein: string, string, min, recursion, string cutting
+lis: arr of ints (list here), getIndex, index access, list comprehension, dictionary
+max_sublist_sum: array/list of ints, for-loop over arr
+mergesort: arr/list of ints, ability to append, extend, recursion, cut array, index access, define function
+next_permutation: list of unique ints, iterate backwards (range function), index access, reverse list, substitute chunks of array with array
+next_palindrome: array/list of digits, //, index access, ability to construct the original datatype through +
+pascal: int, list of lists of ints, range, append, double index-acess
+possible_change: list of positive ints, int, recursion
+powerset: array of nonduplicate elements, output list of lists, generic lists, first/rest, list comprehension
+quicksort: list of ints, list comprehension with filters, construct original datatype using +
+rpn_eval: list of floats and strings, define function, test if float, append, pop
+shunting_yard: list of tokens in infix notation, list of int or string, append, pop, isinstance, index access of last item
+sieve: int, list append, range, %
+sqrt: float, absolute value, /, while loop, >
+subsequences: int, positive int, array/list extend, ability to construct array type with + also list comprehension
+to_base: string.digits, string.ascii_uppercase
+wrap: string, positive int, rfind for text, append, slicing
+
+breadth_first_search: deque Queue, digraph Nodes, queue popleft, queue extend, queue append, list comprehension w/ filter, set, set update
+depth_first_search: digraph Nodes, set, function definition, any, map/list comprehension, node.successors
+detect_cycle: what's this equals thing?, head Node of linked list, node.successor
+knapsack: defaultdict
+minimum_spanning_tree: dict of the form {(u,v): weight} for each undirected graph edge, set, dict sorting, set add, dict update
+reverse_linked_list: head node of singly linked list
+shortest_path_length: MinHeap / FibHeap, heap insert, dict, nodes, pop, add, float('inf')
+shortest_path_lengths: dict keyed by ordered pair of node ids, nodes with ids, outputs a dict, defaultdict, float('inf'), directed_graph
+shortest_paths: directed graph node, dict of edge weights keyed by ordered pair of node ids, dict, float('inf'), min
+topological_ordering: directed graph nodes, orderedset, node.incoming_nodes, issuperset, node.outgoing_nodes

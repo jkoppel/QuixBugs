@@ -1,0 +1,5 @@
+https://stackoverflow.com/questions/6578986/how-to-convert-json-data-into-a-python-object
+https://docs.python.org/2/library/json.html
+https://developers.google.com/protocol-buffers/docs/pythontutorial
+http://idlebrains.org/tutorials/java-tutorials/effective-java-typesafe-heterogeneous-container-pattern/
+https://news.ycombinator.com/item?id=13723356
