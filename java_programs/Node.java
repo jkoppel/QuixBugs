@@ -18,6 +18,7 @@ public class Node {
     public Node(String value) {
         this.value = value;
         successor = null;
+        successors = new ArrayList<>();
     }
 
     public Node(String value, Node successor) {
@@ -42,6 +43,10 @@ public class Node {
 
     void setSuccessor(Node successor) {
         this.successor = successor;
+    }
+
+    void setSuccessors(ArrayList<Node> successors) {
+        this.successors = successors;
     }
 
     Node getSuccessor() {
