@@ -2,67 +2,61 @@
 # make version for proper programs
 
 import copy
+import json
 import sys
 import subprocess
 import types
 
-def py_try(name,flag,*args):
-    # import from within a folder?
-    # print args
-    if flag:
-        module = __import__("python."+name+"GOOD")
-        fx = getattr(module, name+"GOOD")
+def py_try(algo, *args, correct=False):
+    if not correct:
+        module = __import__("python_programs."+algo)
     else:
-        module = __import__("python."+name)
-        fx = getattr(module, name)
+        module = __import__("correct_python_programs."+algo)
+
+    fx = getattr(module, algo)
 
     try:
-        return getattr(fx,name)(*args)
+        return getattr(fx,algo)(*args)
     except:
         return sys.exc_info()
 
 
-def check(name,*args):
-    args1 = copy.deepcopy(args)
-    args2 = copy.deepcopy(args)
-    py_out_good = py_try(name,True,*args1)
-    # print "after: "+str(args)
-    if isinstance(py_out_good,types.GeneratorType):
-        print("Correct: (generator) " + str(list(py_out_good)))
+def prettyprint(o):
+    if isinstance(o, types.GeneratorType):
+        return("(generator) " + str(list(o)))
     else:
-        print("Correct: " + str(py_out_good))
+        return(str(o))
 
-    py_out_test = py_try(name,False,*args2)
-    # print "after: "+str(args)
-    if isinstance(py_out_test,types.GeneratorType):
-        print("Python: (generator) " + str(list(py_out_test)))
-    else:
-        print("Python: " + str(py_out_test))
+if __name__ == "__main__":
+    algo = sys.argv[1]
+    working_file = open("json_testcases/"+algo+".json", 'r')
 
-    try:
-        p1 = subprocess.Popen(["/usr/bin/java", "Main", name]+ \
-                            [str(arg) for arg in args], stdout=subprocess.PIPE)
-        java_out = p1.stdout.read()
-        print("Java: " + str(java_out))
-    except:
-        print("Java: " + str(sys.exc_info()))
+    for line in working_file:
+        py_testcase = json.loads(line)
+        print(py_testcase)
+        test_in, test_out = py_testcase
+        if not isinstance(test_in, list):
+            # input is required to be a list, as multiparameter algos need to deconstruct a list of parameters
+            # should fix in testcases, force all inputs to be list of inputs
+            test_in = [test_in]
+            # unsure how to make immutable; previous versions just used copy.deepcopy
 
-# let's do just filename, first line is name of program
-# other lines will be input args?
-name = sys.argv[1]
-working_file = open("testcases/"+name+".txt", 'r')
+        # check good Python version
+        py_out_good = py_try(algo, *copy.deepcopy(test_in), correct=True)
+        print("Correct Python: " + prettyprint(py_out_good))
 
-for line in working_file:
-    stuff = eval(line)
-    print(stuff)
-    argt, correct = stuff
-    if not isinstance(argt, list):
-        argt = [argt]
+        # check bad Python version
+        py_out_test = py_try(algo, *copy.deepcopy(test_in))
+        print("Bad Python: " + prettyprint(py_out_test))
 
-    check(name,*argt)
+        # check bad Java version
+        try:
+            p1 = subprocess.Popen(["/usr/bin/java", "JavaDeserialization", algo]+ \
+                                [json.dumps(arg) for arg in copy.deepcopy(test_in)], stdout=subprocess.PIPE)
+            java_out = p1.stdout.read()
+            print("Bad Java:   " + prettyprint(java_out)[2:-3])
+        except:
+            print("Bad Java:   " + prettyprint(sys.exc_info()))
 
-
-
-
-
-
+        print()
+        print()

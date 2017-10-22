@@ -51,7 +51,7 @@ public class JavaDeserialization {
         } catch (ClassNotFoundException e) {
             System.out.println(className + " Class is not found.");
         } catch (Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
             System.out.println("nuu :( "+e.getCause());
         }
     }
