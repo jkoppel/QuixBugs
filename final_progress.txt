@@ -30,12 +30,12 @@ subsequences.py
 to_base.py
 wrap.py
 
-breadth_first_search.py
-depth_first_search.py
-detect_cycle.py
-minimum_spanning_tree.py
-reverse_linked_list.py
-shortest_path_length.py
-shortest_path_lengths.py
-shortest_paths.py
+breadth_first_search.py * python, java
+depth_first_search.py * python, java
+detect_cycle.py * python, java (Java version seems correct?)
+minimum_spanning_tree.py * java
+reverse_linked_list.py * python, java
+shortest_path_length.py * java
+shortest_path_lengths.py * java
+shortest_paths.py * java
 topological_ordering.py
