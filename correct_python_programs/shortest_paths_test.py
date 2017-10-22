@@ -19,8 +19,9 @@ def main():
     }
     result =  shortest_paths('A', graph)
     for path in result:
-        print(path, result[path]),
-    print
+        print(path, result[path], end=" ")
+    print()
+
     # Case 2: Graph with one path
     # Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}
     graph2 = {
@@ -32,10 +33,11 @@ def main():
     }
     result =  shortest_paths('A', graph2)
     for path in result:
-        print(path, result[path]),
-    print
+        print(path, result[path], end=" ")
+    print()
+
     # Case 3: Graph with cycle
-    # Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}
+    # Output: {'A': 0, 'C': 3, 'B': 1, 'E': 1, 'D': 0, 'F': 5}
     graph3 = {
         ('A', 'B'): 1,
         ('B', 'C'): 2,
@@ -46,7 +48,8 @@ def main():
     }
     result =  shortest_paths('A', graph3)
     for path in result:
-        print(path, result[path]),
+        print(path, result[path], end=" ")
+    print()
 
 
 if __name__ == "__main__":

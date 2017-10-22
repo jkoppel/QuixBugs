@@ -46,7 +46,7 @@ if __name__ == "__main__":
         correct_module = __import__("correct_python_programs."+algo+"_test")
         correct_fx = getattr(correct_module, algo+"_test")
         getattr(correct_fx,"main")()
-        print("")
+        print()
 
         print("Bad Python:")
         test_module = __import__("python_programs."+algo+"_test")
@@ -55,13 +55,15 @@ if __name__ == "__main__":
             getattr(test_fx,"main")()
         except:
             print(sys.exc_info())
-        print("")
+        print()
 
         print("Bad Java:")
         try:
-            p1 = subprocess.Popen(["/usr/bin/java", "java_programs/"+algo.upper()+"_TEST"], stdout=subprocess.PIPE)
+            p1 = subprocess.Popen(["/usr/bin/java", "java_programs/"+algo.upper()+"_TEST"], stdout=subprocess.PIPE,
+                    universal_newlines=True)
             java_out = p1.stdout.read()
-            print(prettyprint(java_out)[2:-3])
+            print(type(java_out))
+            print(prettyprint(java_out))
         except:
             print(prettyprint(sys.exc_info()))
 
@@ -90,11 +92,11 @@ if __name__ == "__main__":
             # check bad Java version
             try:
                 p1 = subprocess.Popen(["/usr/bin/java", "JavaDeserialization", algo]+ \
-                                    [json.dumps(arg) for arg in copy.deepcopy(test_in)], stdout=subprocess.PIPE)
+                                    [json.dumps(arg) for arg in copy.deepcopy(test_in)], stdout=subprocess.PIPE,
+                                    universal_newlines=True)
                 java_out = p1.stdout.read()
-                print("Bad Java:   " + prettyprint(java_out)[2:-3])
+                print("Bad Java:   " + prettyprint(java_out))
             except:
                 print("Bad Java:   " + prettyprint(sys.exc_info()))
 
-            print()
             print()

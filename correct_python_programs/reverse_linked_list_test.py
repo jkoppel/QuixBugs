@@ -17,13 +17,13 @@ def main():
     result = reverse_linked_list(node5)
 
     if result == node1:
-        print("Reversed!"),
+        print("Reversed!", end=" ")
     else:
-        print("Not Reversed!"),
+        print("Not Reversed!", end=" ")
     while result:
-        print(result.value),
+        print(result.value, end=" ")
         result = result.successor
-    print
+    print()
 
     # Case 2: 1-node list input
     # Expected Output: 0
@@ -31,26 +31,26 @@ def main():
     result = reverse_linked_list(node)
 
     if result == node:
-        print("Reversed!"),
+        print("Reversed!", end=" ")
     else:
-        print("Not Reversed!"),
+        print("Not Reversed!", end=" ")
     while result:
-        print(result.value),
+        print(result.value, end=" ")
         result = result.successor
-    print
+    print()
 
     # Case 3: None input
     # Expected Output: None
     result = reverse_linked_list(None)
     if result == None:
-        print("Reversed!"),
+        print("Reversed!", end=" ")
     else:
-        print("Not Reversed!"),
+        print("Not Reversed!", end=" ")
 
     while result:
         print(result.value)
         result = result.successor
-    print
+    print()
 
 if __name__ == "__main__":
     main()

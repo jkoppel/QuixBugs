@@ -16,10 +16,10 @@ def main():
     station6 = Node("Tottenham Court Road",  None, [station5, station4])
 
     if breadth_first_search(station6, station1):
-        print("Path found!"),
+        print("Path found!", end=" ")
     else:
-        print("Path not found!"),
-    print
+        print("Path not found!", end=" ")
+    print()
 
     # Case 2: Branching graph
     # Output: Path found!
@@ -31,26 +31,26 @@ def main():
     nodea =  Node("A", None, [nodeb, nodec, noded])
 
     if breadth_first_search(nodea, nodee):
-        print("Path found!"),
+        print("Path found!", end=" ")
     else:
-        print("Path not found!"),
-    print
+        print("Path not found!", end=" ")
+    print()
 
     # Case 3: Two unconnected nodes in graph
     # Output: Path not found
     if breadth_first_search(nodef, nodee):
-        print("Path found!"),
+        print("Path found!", end=" ")
     else:
-        print("Path not found!"),
-    print
+        print("Path not found!", end=" ")
+    print()
 
     # Case 4: One node graph
     # Output: Path found!
     if breadth_first_search(nodef, nodef):
-        print("Path found!"),
+        print("Path found!", end=" ")
     else:
-        print("Path not found!"),
-    print
+        print("Path not found!", end=" ")
+    print()
 
     # Case 5: Graph with cycles
     # Output: Path found!
@@ -64,10 +64,10 @@ def main():
     node2.successors = [node6]
 
     if breadth_first_search(node6, node1):
-        print("Path found!"),
+        print("Path found!", end=" ")
     else:
-        print("Path not found!"),
-    print
+        print("Path not found!", end=" ")
+    print()
 
 if __name__ == "__main__":
     main()
