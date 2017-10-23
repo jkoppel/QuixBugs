@@ -1,4 +1,4 @@
-from minimum_spanning_tree import minimum_spanning_tree
+from .minimum_spanning_tree import minimum_spanning_tree
 
 
 """
@@ -14,7 +14,7 @@ def main():
         (1, 4): 10})
     for edge in result:
         print(edge),
-    print
+    print()
 
     # Case 2: Strongly connected tree input.
     # Output: (2, 5) (1, 3) (2, 3) (4, 6) (3, 6)
@@ -31,7 +31,7 @@ def main():
         (5, 6): 6})
     for edge in result:
         print(edge),
-    print
+    print()
 
     # Case 3: Minimum spanning tree input.
     # Output: (1, 2) (1, 3) (2, 4)
@@ -41,7 +41,7 @@ def main():
             (2, 4): 2})
     for edge in result:
         print(edge),
-    print
+    print()
 
 
 if __name__ == "__main__":
