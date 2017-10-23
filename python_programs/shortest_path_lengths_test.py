@@ -18,8 +18,8 @@ def main():
     }
     result =  shortest_path_lengths(6, graph)
     for node_pairs in result:
-        print(node_pairs, result[node_pairs]),
-    print
+        print(node_pairs, result[node_pairs], end=" ")
+    print()
 
     # Case 2: Linear graph input.
     # Output:
@@ -31,8 +31,8 @@ def main():
     }
     result =  shortest_path_lengths(5, graph2)
     for node_pairs in result:
-        print(node_pairs, result[node_pairs]),
-    print
+        print(node_pairs, result[node_pairs], end=" ")
+    print()
 
     # Case 3: Disconnected graphs input.
     # Output:
@@ -42,8 +42,8 @@ def main():
     }
     result =  shortest_path_lengths(4, graph3)
     for node_pairs in result:
-        print(node_pairs, result[node_pairs]),
-    print
+        print(node_pairs, result[node_pairs], end=" ")
+    print()
 
     # Case 4: Strongly connected graph input.
     graph4 = {
@@ -53,8 +53,8 @@ def main():
     }
     result =  shortest_path_lengths(3, graph4)
     for node_pairs in result:
-        print(node_pairs, result[node_pairs]),
-    print
+        print(node_pairs, result[node_pairs], end=" ")
+    print()
 
 
 if __name__ == "__main__":
