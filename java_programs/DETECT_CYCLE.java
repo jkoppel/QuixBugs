@@ -15,7 +15,7 @@ public class DETECT_CYCLE {
         Node tortoise = node;
 
         while (true) {
-            if (hare == null || hare.getSuccessor() == null)
+            if (hare.getSuccessor() == null)
                 return false;
 
             tortoise = tortoise.getSuccessor();
