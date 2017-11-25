@@ -30,12 +30,18 @@ subsequences.py
 to_base.py
 wrap.py
 
+check for explicit relative imports
+check Java version is in fact buggy
+check tester works for each
+check py3 prints well
+check that the hardcoded tests are correct in each folder
+
 breadth_first_search.py * python, java
 depth_first_search.py * python, java
-detect_cycle.py * python, java (Java version seems correct?)
-minimum_spanning_tree.py * java
+detect_cycle.py * python, java
+minimum_spanning_tree.py * python, java (Java is not buggy)
 reverse_linked_list.py * python, java
-shortest_path_length.py * java
-shortest_path_lengths.py * java
-shortest_paths.py * java
-topological_ordering.py
+shortest_path_length.py * java (no Python yet)
+shortest_path_lengths.py * python, java
+shortest_paths.py * python, java
+topological_ordering.py * python
