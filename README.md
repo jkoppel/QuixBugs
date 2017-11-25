@@ -11,52 +11,54 @@ To run both defective versions of a program against their tests, use the test dr
 
 > python3 tester.py _program\_name_
 
-# Structure
+Output is printed for visual comparison.
 
-The root folder holds the test driver. It deserializes the JSON testcases for a selected program, then runs them against the defective versions located in java_programs/ and python_programs/. The exception is graph-based programs, for which the testcases are located in the same folder as the corresponding program (they are still run with the test driver in the same manner). Output is printed for visual comparison.
+# Structure & Details
 
-For reference, corrected versions of the Python programs are in correct_python_programs/.
+The root folder holds the test driver. It deserializes the JSON testcases for a selected program, then runs them against the defective versions located in java\_programs/ and python\_programs/. The exception is graph-based programs, for which the testcases are located in the same folder as the corresponding program (they are still run with the test driver in the same manner).
+
+For reference, corrected versions of the Python programs are in correct\_python\_programs/.
 
 Programs include:
 - bitcount
-- breadth_first_search\*
+- breadth\_first\_search\*
 - bucketsort
-- depth_first_search\*
-- detect_cycle\*
-- find_first_in_sorted
-- find_in_sorted
+- depth\_first\_search\*
+- detect\_cycle\*
+- find\_first\_in\_sorted
+- find\_in\_sorted
 - flatten
 - gcd
-- get_factors
+- get\_factors
 - hanoi
-- is_valid_parenthesization
+- is\_valid\_parenthesization
 - kheapsort
 - knapsack
 - kth
-- lcs_length
+- lcs\_length
 - levenshtein
 - lis
-- longest_common_subsequence
-- max_sublist_sum
+- longest\_common\_subsequence
+- max\_sublist\_sum
 - mergesort
-- minimum_spanning_tree\*
-- next_palindrome
-- next_permutation
+- minimum\_spanning\_tree\*
+- next\_palindrome
+- next\_permutation
 - pascal
-- possible_change
+- possible\_change
 - powerset
 - quicksort
-- reverse_linked_list\*
-- rpn_eval
-- shortest_path_length\*
-- shortest_path_lengths\*
-- shortest_paths\*
-- shunting_yard
+- reverse\_linked\_list\*
+- rpn\_eval
+- shortest\_path\_length\*
+- shortest\_path\_lengths\*
+- shortest\_paths\*
+- shunting\_yard
 - sieve
 - sqrt
 - subsequences
-- to_base
-- topological_ordering\*
+- to\_base
+- topological\_ordering\*
 - wrap
 
 \* - graph-based algorithm
