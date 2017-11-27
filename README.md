@@ -7,7 +7,7 @@ From 2011 to 2013, mobile app search startup Quixey ran a challenge in which pro
 # Installation & Usage
 Simply clone the repo. Note: You must compile the Java programs from the root directory. All Python is written in Python3.
 
-To run both defective versions of a program against their tests, use the test driver:
+To run both defective versions of a program against their tests, as well as the corrected Python version, use the test driver:
 
 > python3 tester.py _program\_name_
 
