@@ -44,4 +44,4 @@ reverse_linked_list.py * python, java
 shortest_path_length.py * java (no Python yet)
 shortest_path_lengths.py * python, java
 shortest_paths.py * python, java
-topological_ordering.py * python
+topological_ordering.py * python, java

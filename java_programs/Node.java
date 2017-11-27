@@ -10,15 +10,16 @@ public class Node {
 
     public Node() {
         this.successor = null;
-        this.successors = null;
-        this.predecessors = null;
+        this.successors = new ArrayList<Node>();
+        this.predecessors = new ArrayList<Node>();
         this.value = null;
     }
 
     public Node(String value) {
         this.value = value;
-        successor = null;
-        successors = new ArrayList<>();
+        this.successor = null;
+        this.successors = new ArrayList<>();
+        this.predecessors = new ArrayList<>();
     }
 
     public Node(String value, Node successor) {
@@ -49,6 +50,10 @@ public class Node {
         this.successors = successors;
     }
 
+    void setPredecessors(ArrayList<Node> predecessors) {
+    	this.predecessors = predecessors;
+    }
+
     Node getSuccessor() {
         return successor;
     }
@@ -56,7 +61,7 @@ public class Node {
     ArrayList<Node> getSuccessors() {
         return successors;
     }
-    ArrayList<Node> getPredecessor() {
+    ArrayList<Node> getPredecessors() {
         return predecessors;
     }
 }
