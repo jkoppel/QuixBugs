@@ -12,7 +12,7 @@ def shortest_path_length(length_by_edge, startnode, goalnode):
 
         visited_nodes.add(node)
 
-        for nextnode in node.outgoing_nodes:
+        for nextnode in node.successors:
             if nextnode in visited_nodes:
                 continue
 
