@@ -1,10 +1,13 @@
-package quixey;
+//Corrected package name from quixey to java_programs.extra;
+//package quixey;
+package java_programs.extra;
 import java.util.*;
 import java.io.*;
 import java.awt.Point;
 import static java.lang.Math.*;
 
-public class NESTED_PARENS {
+//Corrected class from from NESTED_PARENS to NESTED_PARENS_orig
+public class NESTED_PARENS_orig {
     public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(System.in);
         CAS: while(in.hasNext()) {
