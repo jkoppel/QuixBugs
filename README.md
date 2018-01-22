@@ -69,5 +69,12 @@ Programs include:
 
 \* - graph-based algorithm
 
+# To generate Junit testcases
+- For windows user: java -cp .;gson-2.8.1.jar;javawriter-2.5.1.jar junit_testcases.TestsGenerator
+- For Mac or Linux user: java -cp .:gson-2.8.1.jar:javawriter-2.5.1.jar junit_testcases.TestsGenerator 
+- OR just run generate_junit_test.sh
+- check the generated Junit testcases in junit_testcases folder
+
+
 # Authors
 Contact Derrick Lin @drrckln, Angela Chen @angchen, or James Koppel @jkoppel for questions.
