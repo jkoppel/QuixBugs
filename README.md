@@ -12,7 +12,7 @@ Simply clone the repo.
     
 ## Java code
 
-The Java programs are already compiled (see `*.class` files in `java_programs`). Note the all source directory is `.`. The utility class `JavaDeserialization.java` requires you to download the external library Gson (see version in `build.gradle`). To recompile the Java files:
+The Java programs are already compiled (see `*.class` files in `java_programs`). Note the all source directory is `.`. Somes class (eg `JavaDeserialization.java`) require external dependencies (see version in `build.gradle`). To recompile all Java files:
 
     gradle build
 
