@@ -5,13 +5,22 @@ The QuixBugs benchmark consists of 40 programs from the Quixey Challenge transla
 From 2011 to 2013, mobile app search startup Quixey ran a challenge in which programmers were given an implementation of a classic algorithm with a bug on a single line, and had one minute to supply a fix. Success entailed $100 and a possible interview. These programs were developed as challenges for humans by people unaware of program repair.
 
 # Installation & Usage
+
 Simply clone the repo. 
 
     git clone https://github.com/jkoppel/QuixBugs
     
-The Java programs are already compiled (see `*.class` files in `java_programs`). Note the all java programs are in the same package called `java_programs`. The utility class `JavaDeserialization.java` requires you to download the external library Gson.
+## Java code
+
+The Java programs are already compiled (see `*.class` files in `java_programs`). Note the all source directory is `.`. Somes class (eg `JavaDeserialization.java`) require external dependencies (see version in `build.gradle`). To recompile all Java files:
+
+    gradle build
+
+## Python code
 
 All Python is written in Python3.
+
+## Test driver
 
 To run both defective versions of a program against their tests, as well as the corrected Python version, use the test driver:
 
