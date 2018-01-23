@@ -34,6 +34,7 @@ public class JavaTest {
 
         Node result = rll.reverse_linked_list(node5);
 
+        //TODO: handle a null pointer exception
         if (result.getValue() == node1.getValue()) {
             System.out.println("Reversed!");
         }
@@ -79,11 +80,11 @@ public class JavaTest {
         WeightedEdge edge_7 = new WeightedEdge(new Node("D"), new Node("E"), -5);
         WeightedEdge edge_8 = new WeightedEdge(new Node("E"), new Node("F"), -1);
 
-
-        List<WeightedEdge> graph2 = new ArrayList<>(Arrays.asList(edge_1, edge_2, edge_3, edge_4, edge_5, edge_6, edge_7, edge_8));
+        
+        List<WeightedEdge> graph1 = new ArrayList<>(Arrays.asList(edge_1, edge_2, edge_3, edge_4, edge_5, edge_6, edge_7, edge_8));
         SHORTEST_PATHS path = new SHORTEST_PATHS();
         Map<String,Integer> weight_by_node = new HashMap<String,Integer>();
-        weight_by_node = path.shortest_paths(nodeA, graph2);
+        weight_by_node = path.shortest_paths(nodeA, graph1);
         for (String node : weight_by_node.keySet()) {
             System.out.printf("Node: %s, distance: %d\n", node, weight_by_node.get(node));
         }
@@ -97,9 +98,12 @@ public class JavaTest {
         graph2.put(new ArrayList<String>(Arrays.asList("C","E")),4);
         graph2.put(new ArrayList<String>(Arrays.asList("D","E")),-5);
         graph2.put(new ArrayList<String>(Arrays.asList("E","F")),-1);
-
-        SHORTEST_PATHS path = new SHORTEST_PATHS();
-        Map<String,Integer> weight_by_node = new HashMap<String,Integer>();
+       
+        //Removed existed variable name path
+        //SHORTEST_PATHS path = new SHORTEST_PATHS();
+        
+        //Removed existed variable name weight_by_node
+        //Map<String,Integer> weight_by_node = new HashMap<String,Integer>();
         weight_by_node = path.shortest_paths("A", graph2);
         for (String node : weight_by_node.keySet()) {
             System.out.printf("Node: %s, distance: %d\n", node, weight_by_node.get(node));

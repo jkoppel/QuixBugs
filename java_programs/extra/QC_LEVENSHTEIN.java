@@ -1,4 +1,6 @@
-package quixey;
+//Corrected package name from quixey to java_programs.extra;
+//package quixey;
+package java_programs.extra;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
