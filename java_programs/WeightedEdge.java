@@ -1,7 +1,7 @@
 package java_programs;
 import java.util.*;
 
-class WeightedEdge implements Comparable<WeightedEdge>{
+public class WeightedEdge implements Comparable<WeightedEdge>{
     public Node node1;
     public Node node2;
     public int weight;
