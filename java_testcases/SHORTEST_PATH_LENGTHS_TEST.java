@@ -1,5 +1,7 @@
-package java_programs;
+package java_testcases;
 import java.util.*;
+
+import java_programs.SHORTEST_PATH_LENGTHS;
 
 public class SHORTEST_PATH_LENGTHS_TEST {
     public static void main(String[] args) throws Exception {

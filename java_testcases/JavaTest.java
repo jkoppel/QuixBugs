@@ -1,5 +1,15 @@
-package java_programs;
+package java_testcases;
 import java.util.*;
+
+import java_programs.BREADTH_FIRST_SEARCH;
+import java_programs.DEPTH_FIRST_SEARCH;
+import java_programs.DETECT_CYCLE;
+import java_programs.MINIMUM_SPANNING_TREE;
+import java_programs.Node;
+import java_programs.REVERSE_LINKED_LIST;
+import java_programs.SHORTEST_PATHS;
+import java_programs.SHORTEST_PATH_LENGTHS;
+import java_programs.WeightedEdge;
 
 public class JavaTest {
     public static void main(String[] args) throws Exception {

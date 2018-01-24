@@ -1,5 +1,8 @@
-package java_programs;
+package java_testcases;
 import java.util.*;
+
+import java_programs.Node;
+import java_programs.REVERSE_LINKED_LIST;
 
 /**
  * Driver to test revers linked list.
