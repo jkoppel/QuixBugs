@@ -38,30 +38,30 @@ public class Node {
         this.successors = successors;
     }
 
-    String getValue() {
+    public String getValue() {
         return value;
     }
 
-    void setSuccessor(Node successor) {
+    public void setSuccessor(Node successor) {
         this.successor = successor;
     }
 
-    void setSuccessors(ArrayList<Node> successors) {
+    public void setSuccessors(ArrayList<Node> successors) {
         this.successors = successors;
     }
 
-    void setPredecessors(ArrayList<Node> predecessors) {
+    public void setPredecessors(ArrayList<Node> predecessors) {
     	this.predecessors = predecessors;
     }
 
-    Node getSuccessor() {
+    public Node getSuccessor() {
         return successor;
     }
 
-    ArrayList<Node> getSuccessors() {
+    public ArrayList<Node> getSuccessors() {
         return successors;
     }
-    ArrayList<Node> getPredecessors() {
+    public ArrayList<Node> getPredecessors() {
         return predecessors;
     }
 }

@@ -1,7 +1,7 @@
 package java_programs;
 import java.util.*;
 
-class TOPOLOGICAL_ORDERING {
+public class TOPOLOGICAL_ORDERING {
     public static ArrayList<Node> topological_ordering (List<Node> directedGraph) {
         ArrayList<Node> orderedNodes = new ArrayList<Node>();
         for (Node node : directedGraph) {
