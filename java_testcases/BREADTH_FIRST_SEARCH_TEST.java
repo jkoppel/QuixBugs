@@ -1,5 +1,8 @@
-package java_programs;
+package java_testcases;
 import java.util.*;
+
+import java_programs.BREADTH_FIRST_SEARCH;
+import java_programs.Node;
 
 public class BREADTH_FIRST_SEARCH_TEST {
     public static void main(String[] args) throws Exception {

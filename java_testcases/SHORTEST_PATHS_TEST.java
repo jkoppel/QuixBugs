@@ -1,6 +1,8 @@
 
-package java_programs;
+package java_testcases;
 import java.util.*;
+
+import java_programs.SHORTEST_PATHS;
 
 public class SHORTEST_PATHS_TEST {
     public static void main(String[] args) throws Exception {

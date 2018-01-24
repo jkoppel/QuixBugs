@@ -1,4 +1,4 @@
-package junit_testcases;
+package java_testcases;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,8 +26,10 @@ import com.squareup.javawriter.JavaWriter;
 public class TestsGenerator {
 
 	private static String path = Thread.currentThread().getContextClassLoader().getResource("").getPath();
-	private static String jsonPath = new File(path, "json_testcases").toString();
-	private static String junitTestsPath = new File(path, "junit_testcases").toString();
+	private static String JSON_PATH = new File(path, "json_testcases").toString();
+	private static String TESTS_PATH = new File(path, "java_testcases").toString();
+	private static String JUNIT_TESTS_PATH = new File(TESTS_PATH, "junit").toString();
+	private static String PACKAGE_NAME = "java_testcases.junit";
 	private static int TIMEOUT = 100;
 
 	/**
@@ -38,7 +40,7 @@ public class TestsGenerator {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		File[] files = traverseFolder(jsonPath);
+		File[] files = traverseFolder(JSON_PATH);
 		for (File f : files) {
 			if (!f.isDirectory()) {
 				String filePath = f.getAbsolutePath();
@@ -89,9 +91,9 @@ public class TestsGenerator {
 					types = method.getParameterTypes();
 				}
 			}
-			String packageName = "junit_testcases";
-			String testClassName = "TEST_" + clazzName;
-			File outFile = new File(junitTestsPath, testClassName + ".java");
+			String packageName = PACKAGE_NAME;
+			String testClassName = clazzName+"_TEST";
+			File outFile = new File(JUNIT_TESTS_PATH, testClassName + ".java");
 			OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(outFile));
 			JavaWriter jw = new JavaWriter(writer);
 			// Configure package name, class name and Javadoc

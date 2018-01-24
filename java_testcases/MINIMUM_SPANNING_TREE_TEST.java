@@ -1,5 +1,9 @@
-package java_programs;
+package java_testcases;
 import java.util.*;
+
+import java_programs.MINIMUM_SPANNING_TREE;
+import java_programs.Node;
+import java_programs.WeightedEdge;
 
 /**
  * Driver to test minimum spanning tree.
