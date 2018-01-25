@@ -1,4 +1,5 @@
 # QuixBugs Benchmark
+[![Build Status](https://travis-ci.org/SophieHYe/QuixBugs?branch=master)](https://travis-ci.org/SophieHYe/QuixBugs) [![Coverage Status](https://coveralls.io/repos/github/SophieHYe/QuixBugs/badge.svg?branch=master)]
 The QuixBugs benchmark consists of 40 programs from the Quixey Challenge translated into both Python and Java. Each contains a one-line defect, along with passing (when possible) and failing testcases. Defects fall into one of 14 defect classes. Corrected Python programs are also supplied. Quixbugs is intended for investigating cross-language performance by _multi-lingual_ program repair tools. For more details, see the [paper](quixbugs.pdf).
 
 # Background: Quixey Challenge
