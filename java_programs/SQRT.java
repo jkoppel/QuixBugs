@@ -11,8 +11,8 @@ import java.util.*;
  * @author derricklin
  */
 public class SQRT {
-    public static float sqrt(float x, float epsilon) {
-        float approx = x / 2f;
+    public static double sqrt(double x, double epsilon) {
+        double approx = x / 2f;
         while (Math.abs(x-approx) > epsilon) {
             approx = 0.5f * (approx + x / approx);
         }
