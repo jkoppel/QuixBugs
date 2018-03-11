@@ -55,5 +55,18 @@ public class POSSIBLE_CHANGE_TEST {
         int result = java_programs.POSSIBLE_CHANGE.possible_change(new int[]{3,7,42,78},(int)140);
         org.junit.Assert.assertEquals( (int) 20, result);
     }
+    
+    @org.junit.Test(timeout = 3000)
+    public void test_9() throws java.lang.Exception {
+        int result = java_programs.POSSIBLE_CHANGE.possible_change(new int[]{-2124},(int)1);
+        org.junit.Assert.assertEquals( (int) 0, result);
+    }
+    
+    @org.junit.Test(timeout = 3000)
+    public void test_10() throws java.lang.Exception {
+        int result = java_programs.POSSIBLE_CHANGE.possible_change(new int[]{0, 0, 1161, -2685, 639},(int)639);
+        org.junit.Assert.assertEquals( (int) 0, result);
+    }
+    
 }
 
