@@ -6,6 +6,10 @@ def possible_change(coins, total):
         return 0
 
     first, *rest = coins
+    
+    if first <= 0:
+        return 0
+        
     return possible_change(coins, total - first) + possible_change(rest, total)
 
 """
