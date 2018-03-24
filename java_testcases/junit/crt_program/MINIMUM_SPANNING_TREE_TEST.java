@@ -1,4 +1,4 @@
-package java_testcases.junit;
+package java_testcases.junit.crt_program;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,7 +10,7 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import java_programs.MINIMUM_SPANNING_TREE;
+import correct_java_programs.MINIMUM_SPANNING_TREE;
 import java_programs.Node;
 import java_programs.WeightedEdge;
 
