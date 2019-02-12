@@ -1,7 +1,8 @@
 # QuixBugs Benchmark [![Build Status](https://travis-ci.org/jkoppel/QuixBugs.svg?branch=master)](https://travis-ci.org/jkoppel/QuixBugs) [![Coverage Status](https://coveralls.io/repos/github/jkoppel/QuixBugs/badge.svg?branch=master)](https://coveralls.io/repos/github/jkoppel/QuixBugs)
 
-The QuixBugs benchmark consists of 40 programs from the Quixey Challenge translated into both Python and Java. Each contains a one-line defect, along with passing (when possible) and failing testcases. Defects fall into one of 14 defect classes. Corrected Python programs are also supplied. Quixbugs is intended for investigating cross-language performance by _multi-lingual_ program repair tools. For more details, see the ["QuixBugs: A Multi-Lingual Program Repair
-Benchmark Set Based on the Quixey Challenge"](quixbugs.pdf). Researchers at KTH have run 5 repair systems on the Java version of Quixbugs programs, see ["A Comprehensive Study of Automatic Program Repair on the QuixBugs Benchmark"](http://arxiv.org/pdf/1805.03454).
+The QuixBugs benchmark consists of 40 programs from the Quixey Challenge translated into both Python and Java. Each contains a one-line defect, along with passing (when possible) and failing testcases. Defects fall into one of 14 defect classes. Corrected Python programs are also supplied. Quixbugs is intended for investigating cross-language performance by _multi-lingual_ program repair tools. 
+
+For more details, see the ["QuixBugs: A Multi-Lingual Program Repair Benchmark Set Based on the Quixey Challenge"](quixbugs.pdf). Researchers at KTH have run 5 repair systems on the Java version of Quixbugs programs, see ["A Comprehensive Study of Automatic Program Repair on the QuixBugs Benchmark"](http://arxiv.org/pdf/1805.03454).
 
 # Background: Quixey Challenge
 From 2011 to 2013, mobile app search startup Quixey ran a challenge in which programmers were given an implementation of a classic algorithm with a bug on a single line, and had one minute to supply a fix. Success entailed $100 and a possible interview. These programs were developed as challenges for humans by people unaware of program repair.
