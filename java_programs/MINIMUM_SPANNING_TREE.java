@@ -33,9 +33,8 @@ public class MINIMUM_SPANNING_TREE {
     }
 
     public static Map<Node,Set<Node>> update(Map<Node,Set<Node>> groupByNode, Node vertex_u, Node vertex_v) {
-        Set<Node> vertex_u_span = new HashSet<>(groupByNode.get(vertex_u));
+        Set<Node> vertex_u_span = groupByNode.get(vertex_u);
         vertex_u_span.addAll(groupByNode.get(vertex_v));
-        groupByNode.put(vertex_u, vertex_u_span);
 
         return groupByNode;
     }
