@@ -15,8 +15,6 @@ public class DEPTH_FIRST_SEARCH_TEST {
         Node station5 = new Node("London Bridge", new ArrayList<Node>(Arrays.asList(station4, station3)));
         Node station6 = new Node("Tottenham Court Road", new ArrayList<Node>(Arrays.asList(station5, station4)));
 
-        // DEPTH_FIRST_SEARCH dfs = new DEPTH_FIRST_SEARCH();
-
         if (DEPTH_FIRST_SEARCH.depth_first_search(station6, station1))
             System.out.println("Path Found!");
         else
