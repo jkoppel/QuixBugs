@@ -33,9 +33,7 @@ public class TOPOLOGICAL_ORDERING_TEST {
         nine.setPredecessors(new ArrayList<Node>(Arrays.asList(eleven, eight)));
         ten.setPredecessors(new ArrayList<Node>(Arrays.asList(eleven, three)));
 
-        TOPOLOGICAL_ORDERING to = new TOPOLOGICAL_ORDERING();
-
-        ArrayList<Node> output = to.topological_ordering(new ArrayList<Node>(Arrays.asList(five, seven, three, eleven, eight, two, nine, ten)));
+        ArrayList<Node> output = TOPOLOGICAL_ORDERING.topological_ordering(new ArrayList<Node>(Arrays.asList(five, seven, three, eleven, eight, two, nine, ten)));
         ArrayList<String> string_output = new ArrayList<String>();
         for (Node node : output) {
             string_output.add(node.getValue());
@@ -62,9 +60,7 @@ public class TOPOLOGICAL_ORDERING_TEST {
         three.setPredecessors(new ArrayList<Node>(Arrays.asList(two)));
         three.setSuccessors(new ArrayList<Node>(Arrays.asList(one)));
 
-        to = new TOPOLOGICAL_ORDERING();
-
-        output = to.topological_ordering(new ArrayList<Node>(Arrays.asList(zero, one, two, three, four, five)));
+        output = TOPOLOGICAL_ORDERING.topological_ordering(new ArrayList<Node>(Arrays.asList(zero, one, two, three, four, five)));
         string_output = new ArrayList<String>();
         for (Node node : output) {
             string_output.add(node.getValue());
@@ -99,9 +95,7 @@ public class TOPOLOGICAL_ORDERING_TEST {
         syrup.setSuccessors(new ArrayList<Node>(Arrays.asList(eat)));
         eat.setPredecessors(new ArrayList<Node>(Arrays.asList(syrup, turn)));
 
-        to = new TOPOLOGICAL_ORDERING();
-
-        output = to.topological_ordering(new ArrayList<Node>(Arrays.asList(milk, egg, oil, mix, syrup, griddle, pour, turn, eat)));
+        output = TOPOLOGICAL_ORDERING.topological_ordering(new ArrayList<Node>(Arrays.asList(milk, egg, oil, mix, syrup, griddle, pour, turn, eat)));
         string_output = new ArrayList<String>();
         for (Node node : output) {
             string_output.add(node.getValue());

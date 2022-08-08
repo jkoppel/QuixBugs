@@ -20,9 +20,7 @@ public class JavaTest {
         Node station5 = new Node("London Bridge",  new ArrayList<Node>(Arrays.asList(station4, station3)));
         Node station6 = new Node("Tottenham Court Road",  new ArrayList<Node>(Arrays.asList(station5, station4)));
 
-        BREADTH_FIRST_SEARCH bfs = new BREADTH_FIRST_SEARCH();
-
-        if (bfs.breadth_first_search(station6, station1))
+        if (BREADTH_FIRST_SEARCH.breadth_first_search(station6, station1))
             System.out.println("Path Found!");
         else
             System.out.println("Path Not Found!");
@@ -40,9 +38,7 @@ public class JavaTest {
         Node node4 = new Node("4", node3);
         Node node5 = new Node("5", node4);
 
-        REVERSE_LINKED_LIST rll = new REVERSE_LINKED_LIST();
-
-        Node result = rll.reverse_linked_list(node5);
+        Node result = REVERSE_LINKED_LIST.reverse_linked_list(node5);
 
         //TODO: handle a null pointer exception
         if (result.getValue() == node1.getValue()) {
@@ -57,9 +53,7 @@ public class JavaTest {
 
         node1.setSuccessor(node2);
 
-        DETECT_CYCLE dc = new DETECT_CYCLE();
-
-        if (dc.detect_cycle(node5)) {
+        if (DETECT_CYCLE.detect_cycle(node5)) {
             System.out.println("Cycle detected!");
         } else {
             System.out.println("Cycle not detected!");
@@ -71,10 +65,9 @@ public class JavaTest {
         WeightedEdge edge4 = new WeightedEdge(node1, node4, 10);
 
         List<WeightedEdge> graph = new ArrayList<>(Arrays.asList(edge1, edge2, edge3, edge4));
-        MINIMUM_SPANNING_TREE mst = new MINIMUM_SPANNING_TREE();
 
         Set<WeightedEdge> minspantree = new HashSet<>();
-        minspantree.addAll(mst.minimum_spanning_tree(graph));
+        minspantree.addAll(MINIMUM_SPANNING_TREE.minimum_spanning_tree(graph));
 
         for (WeightedEdge edge : minspantree) {
             System.out.printf("u: %s, v: %s, weight: %d\n", edge.node1.getValue(), edge.node2.getValue(), edge.weight);
@@ -92,9 +85,9 @@ public class JavaTest {
 
         
         List<WeightedEdge> graph1 = new ArrayList<>(Arrays.asList(edge_1, edge_2, edge_3, edge_4, edge_5, edge_6, edge_7, edge_8));
-        SHORTEST_PATHS path = new SHORTEST_PATHS();
+
         Map<String,Integer> weight_by_node = new HashMap<String,Integer>();
-        weight_by_node = path.shortest_paths(nodeA, graph1);
+        weight_by_node = SHORTEST_PATHS.shortest_paths(nodeA, graph1);
         for (String node : weight_by_node.keySet()) {
             System.out.printf("Node: %s, distance: %d\n", node, weight_by_node.get(node));
         }
@@ -114,7 +107,7 @@ public class JavaTest {
         
         //Removed existed variable name weight_by_node
         //Map<String,Integer> weight_by_node = new HashMap<String,Integer>();
-        weight_by_node = path.shortest_paths("A", graph2);
+        weight_by_node = SHORTEST_PATHS.shortest_paths("A", graph2);
         for (String node : weight_by_node.keySet()) {
             System.out.printf("Node: %s, distance: %d\n", node, weight_by_node.get(node));
         }
@@ -128,9 +121,8 @@ public class JavaTest {
         graph3.put(new ArrayList<Integer>(Arrays.asList(4,5)),-5);
         graph3.put(new ArrayList<Integer>(Arrays.asList(5,6)),-1);
 
-        SHORTEST_PATH_LENGTHS path2 = new SHORTEST_PATH_LENGTHS();
         Map<List<Integer>,Integer> length_by_path = new HashMap<>();
-        length_by_path = path2.shortest_path_lengths(6, graph3);
+        length_by_path = SHORTEST_PATH_LENGTHS.shortest_path_lengths(6, graph3);
         for (List<Integer> edge : length_by_path.keySet()) {
             for(Integer i : edge) {
                 System.out.printf(" Node: %d ", i);

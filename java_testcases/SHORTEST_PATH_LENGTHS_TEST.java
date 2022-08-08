@@ -15,9 +15,8 @@ public class SHORTEST_PATH_LENGTHS_TEST {
         graph.put(new ArrayList<Integer>(Arrays.asList(3, 4)), -5);
         graph.put(new ArrayList<Integer>(Arrays.asList(4, 5)), -1);
 
-        SHORTEST_PATH_LENGTHS spl = new SHORTEST_PATH_LENGTHS();
         Map<List<Integer>, Integer> length_by_path = new HashMap<>();
-        length_by_path = spl.shortest_path_lengths(6, graph);
+        length_by_path = SHORTEST_PATH_LENGTHS.shortest_path_lengths(6, graph);
         for (List<Integer> edge : length_by_path.keySet()) {
             System.out.printf("((%d, %d), %d) ", edge.get(0), edge.get(1), length_by_path.get(edge));
         }
@@ -31,7 +30,7 @@ public class SHORTEST_PATH_LENGTHS_TEST {
         graph2.put(new ArrayList<Integer>(Arrays.asList(3, 4)), 7);
 
         Map<List<Integer>, Integer> length_by_path2 = new HashMap<>();
-        length_by_path2 = spl.shortest_path_lengths(5, graph2);
+        length_by_path2 = SHORTEST_PATH_LENGTHS.shortest_path_lengths(5, graph2);
         for (List<Integer> edge : length_by_path2.keySet()) {
             System.out.printf("((%d, %d), %d) ", edge.get(0), edge.get(1), length_by_path2.get(edge));
         }
@@ -43,7 +42,7 @@ public class SHORTEST_PATH_LENGTHS_TEST {
         graph3.put(new ArrayList<Integer>(Arrays.asList(2, 3)), 5);
 
         Map<List<Integer>, Integer> length_by_path3 = new HashMap<>();
-        length_by_path3 = spl.shortest_path_lengths(4, graph3);
+        length_by_path3 = SHORTEST_PATH_LENGTHS.shortest_path_lengths(4, graph3);
         for (List<Integer> edge : length_by_path3.keySet()) {
             System.out.printf("((%d, %d), %d) ", edge.get(0), edge.get(1), length_by_path3.get(edge));
         }
@@ -56,7 +55,7 @@ public class SHORTEST_PATH_LENGTHS_TEST {
         graph4.put(new ArrayList<Integer>(Arrays.asList(2, 0)), -1);
 
         Map<List<Integer>, Integer> length_by_path4 = new HashMap<>();
-        length_by_path4 = spl.shortest_path_lengths(3, graph4);
+        length_by_path4 = SHORTEST_PATH_LENGTHS.shortest_path_lengths(3, graph4);
         for (List<Integer> edge : length_by_path4.keySet()) {
             System.out.printf("((%d, %d), %d) ", edge.get(0), edge.get(1), length_by_path4.get(edge));
         }
