@@ -18,9 +18,7 @@ public class DETECT_CYCLE_TEST {
         Node node4 = new Node("4", node3);
         Node node5 = new Node("5", node4);
 
-        DETECT_CYCLE dc = new DETECT_CYCLE();
-
-        if (dc.detect_cycle(node5)) {
+        if (DETECT_CYCLE.detect_cycle(node5)) {
             System.out.println("Cycle detected!");
         } else {
             System.out.println("Cycle not detected!");
@@ -30,7 +28,7 @@ public class DETECT_CYCLE_TEST {
         // Expected Output: Cycle detected!
         node1.setSuccessor(node5);
 
-        if (dc.detect_cycle(node5)) {
+        if (DETECT_CYCLE.detect_cycle(node5)) {
             System.out.println("Cycle detected!");
         } else {
             System.out.println("Cycle not detected!");
@@ -39,7 +37,7 @@ public class DETECT_CYCLE_TEST {
         // Case 3: 2-node list with cycle
         //  Expected Output: Cycle detected!
         node1.setSuccessor(node2);
-        if (dc.detect_cycle(node2)) {
+        if (DETECT_CYCLE.detect_cycle(node2)) {
             System.out.println("Cycle detected!");
         } else {
             System.out.println("Cycle not detected!");
@@ -49,7 +47,7 @@ public class DETECT_CYCLE_TEST {
         //  Expected Output: Cycle not detected!
         Node node6 = new Node("6");
         Node node7 = new Node("7", node6);
-        if (dc.detect_cycle(node7)) {
+        if (DETECT_CYCLE.detect_cycle(node7)) {
             System.out.println("Cycle detected!");
         } else {
             System.out.println("Cycle not detected!");
@@ -58,7 +56,7 @@ public class DETECT_CYCLE_TEST {
         // Case 5: 1-node list
         // Expected Output: Cycle not detected!
         Node node = new Node("0");
-        if (dc.detect_cycle(node)) {
+        if (DETECT_CYCLE.detect_cycle(node)) {
             System.out.println("Cycle detected!");
         } else {
             System.out.println("Cycle not detected!");

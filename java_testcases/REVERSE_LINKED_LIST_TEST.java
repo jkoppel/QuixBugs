@@ -17,9 +17,7 @@ public class REVERSE_LINKED_LIST_TEST {
         Node node4 = new Node("4", node3);
         Node node5 = new Node("5", node4);
 
-        REVERSE_LINKED_LIST rll = new REVERSE_LINKED_LIST();
-
-        Node result = rll.reverse_linked_list(node5);
+        Node result = REVERSE_LINKED_LIST.reverse_linked_list(node5);
 
         if (result.getValue() == node1.getValue()) {
             System.out.printf("Reversed! ");
@@ -35,7 +33,7 @@ public class REVERSE_LINKED_LIST_TEST {
         // Case 2: 1-node list input
         // Expected Output: Reversed!  0
         Node node = new Node("0");
-        result = rll.reverse_linked_list(node);
+        result = REVERSE_LINKED_LIST.reverse_linked_list(node);
 
         if (result.getValue() == node.getValue()) {
             System.out.printf("Reversed! ");
@@ -50,7 +48,7 @@ public class REVERSE_LINKED_LIST_TEST {
 
         // Case 3: None input
         // Expected Output: None
-        result = rll.reverse_linked_list(null);
+        result = REVERSE_LINKED_LIST.reverse_linked_list(null);
 
         if (result == null) {
             System.out.printf("Reversed! ");

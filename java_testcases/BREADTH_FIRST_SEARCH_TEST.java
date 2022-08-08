@@ -15,9 +15,7 @@ public class BREADTH_FIRST_SEARCH_TEST {
         Node station5 = new Node("London Bridge", new ArrayList<Node>(Arrays.asList(station4, station3)));
         Node station6 = new Node("Tottenham Court Road", new ArrayList<Node>(Arrays.asList(station5, station4)));
 
-        BREADTH_FIRST_SEARCH bfs = new BREADTH_FIRST_SEARCH();
-
-        if (bfs.breadth_first_search(station6, station1))
+        if (BREADTH_FIRST_SEARCH.breadth_first_search(station6, station1))
             System.out.println("Path Found!");
         else
             System.out.println("Path Not Found!");
@@ -31,21 +29,21 @@ public class BREADTH_FIRST_SEARCH_TEST {
         Node nodeb = new Node("B", new ArrayList<Node>(Arrays.asList(nodee)));
         Node nodea = new Node("A", new ArrayList<Node>(Arrays.asList(nodeb, nodec, noded)));
 
-        if (bfs.breadth_first_search(nodea, nodee))
+        if (BREADTH_FIRST_SEARCH.breadth_first_search(nodea, nodee))
             System.out.println("Path Found!");
         else
             System.out.println("Path Not Found!");
 
         // Case 3: Two unconnected nodes in graph
         // Output: Path not found!
-        if (bfs.breadth_first_search(nodef, nodee))
+        if (BREADTH_FIRST_SEARCH.breadth_first_search(nodef, nodee))
             System.out.println("Path Found!");
         else
             System.out.println("Path Not Found!");
 
         // Case 4: One node graph
         // Output: Path found!
-        if (bfs.breadth_first_search(nodef, nodef))
+        if (BREADTH_FIRST_SEARCH.breadth_first_search(nodef, nodef))
             System.out.println("Path Found!");
         else
             System.out.println("Path Not Found!");
@@ -59,7 +57,7 @@ public class BREADTH_FIRST_SEARCH_TEST {
         //Case 5: Graph with cycle
         // Output: Path found!
         node2.setSuccessors(new ArrayList<Node>(Arrays.asList(node6)));
-        if (bfs.breadth_first_search(node6, node1))
+        if (BREADTH_FIRST_SEARCH.breadth_first_search(node6, node1))
             System.out.println("Path Found!");
         else
             System.out.println("Path Not Found!");

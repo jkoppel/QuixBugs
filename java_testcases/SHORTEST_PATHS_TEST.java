@@ -17,9 +17,8 @@ public class SHORTEST_PATHS_TEST {
         graph.put(new ArrayList<String>(Arrays.asList("D", "E")), -5);
         graph.put(new ArrayList<String>(Arrays.asList("E", "F")), -1);
 
-        SHORTEST_PATHS path = new SHORTEST_PATHS();
         Map<String, Integer> weight_by_node = new HashMap<String, Integer>();
-        weight_by_node = path.shortest_paths("A", graph);
+        weight_by_node = SHORTEST_PATHS.shortest_paths("A", graph);
         for (String node : weight_by_node.keySet()) {
             System.out.printf("('%s', %d) ", node, weight_by_node.get(node));
         }
@@ -34,7 +33,7 @@ public class SHORTEST_PATHS_TEST {
         graph2.put(new ArrayList<String>(Arrays.asList("D", "E")), -1);
         graph2.put(new ArrayList<String>(Arrays.asList("E", "F")), 4);
 
-        weight_by_node = path.shortest_paths("A", graph2);
+        weight_by_node = SHORTEST_PATHS.shortest_paths("A", graph2);
         for (String node : weight_by_node.keySet()) {
             System.out.printf("('%s', %d) ", node, weight_by_node.get(node));
         }
@@ -43,7 +42,7 @@ public class SHORTEST_PATHS_TEST {
         // Case 3: Graph with cycle
         // Output: {'A': 0, 'C': 3, 'B': 1, 'E': 5, 'D': 6, 'F': 9}
         graph2.put(new ArrayList<String>(Arrays.asList("E", "D")), 1);
-        weight_by_node = path.shortest_paths("A", graph2);
+        weight_by_node = SHORTEST_PATHS.shortest_paths("A", graph2);
         for (String node : weight_by_node.keySet()) {
             System.out.printf("('%s', %d) ", node, weight_by_node.get(node));
         }

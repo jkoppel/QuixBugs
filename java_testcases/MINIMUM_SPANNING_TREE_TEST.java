@@ -25,10 +25,9 @@ public class MINIMUM_SPANNING_TREE_TEST {
         WeightedEdge edge14 = new WeightedEdge(node1, node4, 10);
 
         List<WeightedEdge> graph = new ArrayList<>(Arrays.asList(edge11, edge12, edge13, edge14));
-        MINIMUM_SPANNING_TREE mst = new MINIMUM_SPANNING_TREE();
 
         Set<WeightedEdge> minspantree = new HashSet<>();
-        minspantree.addAll(mst.minimum_spanning_tree(graph));
+        minspantree.addAll(MINIMUM_SPANNING_TREE.minimum_spanning_tree(graph));
 
         for (WeightedEdge edge : minspantree) {
             System.out.printf("(%s, %s) ", edge.node1.getValue(), edge.node2.getValue(), edge.weight);
@@ -51,7 +50,7 @@ public class MINIMUM_SPANNING_TREE_TEST {
                 Arrays.asList(edge21, edge22, edge23, edge24, edge25, edge26, edge27, edge28, edge29, edge210));
 
         Set<WeightedEdge> minspantree2 = new HashSet<>();
-        minspantree2.addAll(mst.minimum_spanning_tree(graph2));
+        minspantree2.addAll(MINIMUM_SPANNING_TREE.minimum_spanning_tree(graph2));
 
         for (WeightedEdge edge : minspantree2) {
             System.out.printf("(%s, %s) ", edge.node1.getValue(), edge.node2.getValue(), edge.weight);
@@ -66,7 +65,7 @@ public class MINIMUM_SPANNING_TREE_TEST {
                 Arrays.asList(edge31, edge32, edge33));
 
         Set<WeightedEdge> minspantree3 = new HashSet<>();
-        minspantree3.addAll(mst.minimum_spanning_tree(graph3));
+        minspantree3.addAll(MINIMUM_SPANNING_TREE.minimum_spanning_tree(graph3));
 
         for (WeightedEdge edge : minspantree3) {
             System.out.printf("(%s, %s) ", edge.node1.getValue(), edge.node2.getValue(), edge.weight);
