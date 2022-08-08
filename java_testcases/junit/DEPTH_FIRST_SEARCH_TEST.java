@@ -21,7 +21,7 @@ public class DEPTH_FIRST_SEARCH_TEST {
 		Node station5 = new Node("London Bridge", new ArrayList<Node>(Arrays.asList(station4, station3)));
 		Node station6 = new Node("Tottenham Court Road", new ArrayList<Node>(Arrays.asList(station5, station4)));
 
-		Boolean result = new DEPTH_FIRST_SEARCH().depth_first_search(station6, station1);
+		Boolean result = DEPTH_FIRST_SEARCH.depth_first_search(station6, station1);
 		String resultStr = "";
 		if (result) {
 			resultStr = "Path found!";
@@ -46,7 +46,7 @@ public class DEPTH_FIRST_SEARCH_TEST {
 	@Test
 	public void test2() {
 
-		Boolean result = new DEPTH_FIRST_SEARCH().depth_first_search(nodea, nodee);
+		Boolean result = DEPTH_FIRST_SEARCH.depth_first_search(nodea, nodee);
 		String resultStr = "";
 		if (result) {
 			resultStr = "Path found!";
@@ -61,7 +61,7 @@ public class DEPTH_FIRST_SEARCH_TEST {
 	 */
 	@Test
 	public void test3() {
-		Boolean result = new DEPTH_FIRST_SEARCH().depth_first_search(nodef, nodee);
+		Boolean result = DEPTH_FIRST_SEARCH.depth_first_search(nodef, nodee);
 		String resultStr = "";
 		if (result) {
 			resultStr = "Path found!";
@@ -77,7 +77,7 @@ public class DEPTH_FIRST_SEARCH_TEST {
 	 */
 	@Test
 	public void test4() {
-		Boolean result = new DEPTH_FIRST_SEARCH().depth_first_search(nodef, nodef);
+		Boolean result = DEPTH_FIRST_SEARCH.depth_first_search(nodef, nodef);
 		String resultStr = "";
 		if (result) {
 			resultStr = "Path found!";
@@ -94,7 +94,7 @@ public class DEPTH_FIRST_SEARCH_TEST {
 	@Test
 	public void test5() {
 		nodee.setSuccessors(new ArrayList<Node>(Arrays.asList(nodea)));
-		Boolean result = new DEPTH_FIRST_SEARCH().depth_first_search(nodea, nodef);
+		Boolean result = DEPTH_FIRST_SEARCH.depth_first_search(nodea, nodef);
 		String resultStr = "";
 		if (result) {
 			resultStr = "Path found!";

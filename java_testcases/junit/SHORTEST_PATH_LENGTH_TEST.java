@@ -20,7 +20,6 @@ public class SHORTEST_PATH_LENGTH_TEST {
 	static Node node4;
 	static Node node5;
 	static Node node0;
-	SHORTEST_PATH_LENGTH spl = new SHORTEST_PATH_LENGTH();
 	
 	static {
 		node1 = new Node("1");
@@ -44,7 +43,7 @@ public class SHORTEST_PATH_LENGTH_TEST {
 	 */
 	@Test
 	public void test1() {
-		int result = spl.shortest_path_length(length_by_edge, node0, node1);
+		int result = SHORTEST_PATH_LENGTH.shortest_path_length(length_by_edge, node0, node1);
 		
 		
 		
@@ -56,7 +55,7 @@ public class SHORTEST_PATH_LENGTH_TEST {
 	 */
 	@Test
 	public void test2() {
-		int result = spl.shortest_path_length(length_by_edge, node0, node5);
+		int result = SHORTEST_PATH_LENGTH.shortest_path_length(length_by_edge, node0, node5);
 		assertEquals(7, result);
 	}
 
@@ -65,7 +64,7 @@ public class SHORTEST_PATH_LENGTH_TEST {
 	 */
 	@Test
 	public void test3() {
-		int result = spl.shortest_path_length(length_by_edge, node2, node2);
+		int result = SHORTEST_PATH_LENGTH.shortest_path_length(length_by_edge, node2, node2);
 		assertEquals(0, result);
 	}
 
@@ -74,7 +73,7 @@ public class SHORTEST_PATH_LENGTH_TEST {
 	 */
 	@Test
 	public void test4() {
-		int result = spl.shortest_path_length(length_by_edge, node1, node5);
+		int result = SHORTEST_PATH_LENGTH.shortest_path_length(length_by_edge, node1, node5);
 		assertEquals(2147483647, result);
 	}
 

@@ -15,9 +15,7 @@ public class DEPTH_FIRST_SEARCH_TEST {
         Node station5 = new Node("London Bridge", new ArrayList<Node>(Arrays.asList(station4, station3)));
         Node station6 = new Node("Tottenham Court Road", new ArrayList<Node>(Arrays.asList(station5, station4)));
 
-        DEPTH_FIRST_SEARCH dfs = new DEPTH_FIRST_SEARCH();
-
-        if (dfs.depth_first_search(station6, station1))
+        if (DEPTH_FIRST_SEARCH.depth_first_search(station6, station1))
             System.out.println("Path Found!");
         else
             System.out.println("Path Not Found!");
@@ -31,21 +29,21 @@ public class DEPTH_FIRST_SEARCH_TEST {
         Node nodeb = new Node("B", new ArrayList<Node>(Arrays.asList(nodee)));
         Node nodea = new Node("A", new ArrayList<Node>(Arrays.asList(nodeb, nodec, noded)));
 
-        if (dfs.depth_first_search(nodea, nodee))
+        if (DEPTH_FIRST_SEARCH.depth_first_search(nodea, nodee))
             System.out.println("Path Found!");
         else
             System.out.println("Path Not Found!");
 
         // Case 3: Two unconnected nodes in graph
         // Output: Path not found!
-        if (dfs.depth_first_search(nodef, nodee))
+        if (DEPTH_FIRST_SEARCH.depth_first_search(nodef, nodee))
             System.out.println("Path Found!");
         else
             System.out.println("Path Not Found!");
 
         // Case 4: One node graph
         // Output: Path found!
-        if (dfs.depth_first_search(nodef, nodef))
+        if (DEPTH_FIRST_SEARCH.depth_first_search(nodef, nodef))
             System.out.println("Path Found!");
         else
             System.out.println("Path Not Found!");
@@ -53,7 +51,7 @@ public class DEPTH_FIRST_SEARCH_TEST {
         //Case 5: Graph with cycle
         // Output: Path found!
         nodee.setSuccessors(new ArrayList<Node>(Arrays.asList(nodea)));
-        if (dfs.depth_first_search(nodea, nodef))
+        if (DEPTH_FIRST_SEARCH.depth_first_search(nodea, nodef))
             System.out.println("Path Found!");
         else
             System.out.println("Path Not Found!");

@@ -23,26 +23,24 @@ public class SHORTEST_PATH_LENGTH_TEST {
         length_by_edge.put(new ArrayList<Node>(Arrays.asList(node3, node4)), 1);
         length_by_edge.put(new ArrayList<Node>(Arrays.asList(node4, node5)), 1);
 
-        SHORTEST_PATH_LENGTH spl = new SHORTEST_PATH_LENGTH();
-
         // Case 1: One path
         // Output: 4
-        int shortest_path_length = spl.shortest_path_length(length_by_edge, node0, node1);
+        int shortest_path_length = SHORTEST_PATH_LENGTH.shortest_path_length(length_by_edge, node0, node1);
         System.out.println(shortest_path_length);
 
         // Case 2: Multiple path
         // Output: 7
-        int shortest_path_length2 = spl.shortest_path_length(length_by_edge, node0, node5);
+        int shortest_path_length2 = SHORTEST_PATH_LENGTH.shortest_path_length(length_by_edge, node0, node5);
         System.out.println(shortest_path_length2);
 
         // Case 3: Start point is same as end point
         // Output: 0
-        int shortest_path_length3 = spl.shortest_path_length(length_by_edge, node2, node2);
+        int shortest_path_length3 = SHORTEST_PATH_LENGTH.shortest_path_length(length_by_edge, node2, node2);
         System.out.println(shortest_path_length3);
 
         // Case 4: Unreachable path
         // Output: INT_MAX
-        int shortest_path_length4 = spl.shortest_path_length(length_by_edge, node1, node5);
+        int shortest_path_length4 = SHORTEST_PATH_LENGTH.shortest_path_length(length_by_edge, node1, node5);
         System.out.println(shortest_path_length4);
 
 
