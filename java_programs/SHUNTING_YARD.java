@@ -23,7 +23,7 @@ public class SHUNTING_YARD {
 
         for (Object token: tokens) {
             if (Integer.class.isInstance(token)) {
-		// cover also Double case I guess?
+            // cover also Double case I guess?
                 rpntokens.add((Integer) token);
             } else {
                 String operator = (String) token;

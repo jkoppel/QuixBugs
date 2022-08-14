@@ -57,7 +57,7 @@ public class JavaDeserialization {
     }
 
     // Create list of objects corresponding to input arguments through deserialization
-    public static Object[] getParameters(Type[] types,  String[] args){
+    public static Object[] getParameters(Type[] types,  String[] args) {
         int numOfParameters = types.length;
         Object[] parameters = new Object[numOfParameters];
         Gson gsonArguments = new Gson();
@@ -66,29 +66,29 @@ public class JavaDeserialization {
                 for (int i = 0; i < numOfParameters; i++) {
                     Type type = types[i];
                     parameters[i] = gsonArguments.fromJson(args[i + 1], (Class)type);
-		    if (type.getTypeName().equals("java.util.ArrayList")) {
-			// workaround for reading in Integers and Doubles differently
-			// default is to read all Numbers as Doubles
-			JsonParser parser = new JsonParser();
-			JsonArray array = parser.parse(args[i + 1]).getAsJsonArray();
+                    if (type.getTypeName().equals("java.util.ArrayList")) {
+                        // workaround for reading in Integers and Doubles differently
+                        // default is to read all Numbers as Doubles
+                        JsonParser parser = new JsonParser();
+                        JsonArray array = parser.parse(args[i + 1]).getAsJsonArray();
 
-			ArrayList checked_arr = new ArrayList();
-			for (int j = 0; j < array.size(); j++) {
-			    JsonElement elem = array.get(j);
-			    String str_elem = elem.getAsString();
-			    if (str_elem.matches("[0-9]+")) {
-			    	checked_arr.add((Integer) elem.getAsInt());
-			    } else if (str_elem.matches("[0-9]+.[0-9]+")) {
-				checked_arr.add(elem.getAsDouble());
-			    } else {
-				checked_arr.add(str_elem);
-			    }
-			}
-			parameters[i] = checked_arr;
-		    } else {
-                    	parameters[i] = gsonArguments.fromJson(args[i + 1], (Class)type);
-		    }
-		}
+                        ArrayList checked_arr = new ArrayList();
+                        for (int j = 0; j < array.size(); j++) {
+                            JsonElement elem = array.get(j);
+                            String str_elem = elem.getAsString();
+                            if (str_elem.matches("[0-9]+")) {
+                                checked_arr.add((Integer) elem.getAsInt());
+                            } else if (str_elem.matches("[0-9]+.[0-9]+")) {
+                                checked_arr.add(elem.getAsDouble());
+                            } else {
+                                checked_arr.add(str_elem);
+                            }
+                        }
+                        parameters[i] = checked_arr;
+                    } else {
+                        parameters[i] = gsonArguments.fromJson(args[i + 1], (Class)type);
+                    }
+                }
             }
 
         } catch (NumberFormatException e){

@@ -20,7 +20,7 @@ public class DEPTH_FIRST_SEARCH {
                     return true;
                 } else {
                     for (Node successornodes : node.getSuccessors()) {
-	                    if (search(successornodes)) { return true; }
+                        if (search(successornodes)) { return true; }
                     }
                 }
                 return false;

@@ -18,10 +18,10 @@ public class BUCKETSORT {
         }
 
         ArrayList<Integer> sorted_arr = new ArrayList<Integer>(100);
-	int i = 0;
-        for (Integer count : counts) { 
-	    sorted_arr.addAll(Collections.nCopies(count, i));
-	    i++;
+        int i = 0;
+        for (Integer count : counts) {
+            sorted_arr.addAll(Collections.nCopies(count, i));
+            i++;
         }
 
         return sorted_arr;

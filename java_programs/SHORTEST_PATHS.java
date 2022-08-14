@@ -11,8 +11,8 @@ public class SHORTEST_PATHS {
     // Define Infinite as a large enough value. This value will be used
     // for vertices not connected to each other
     final static int INF = 99999;
-    
-   
+
+
     public static Map<String, Integer> shortest_paths(String source, Map<List<String>,Integer> weight_by_edge) {
         Map<String,Integer> weight_by_node = new HashMap<String,Integer>();
         for (List<String> edge : weight_by_edge.keySet()) {
@@ -32,15 +32,15 @@ public class SHORTEST_PATHS {
         }
         return weight_by_node;
     }
-    
-    
+
+
     /**
      * Rewrite shortest_paths method
      * @param node
      * @param weight_by_edge
      * @return
      */
-    
+
     public static Map<String, Integer> shortest_paths(Node source, List<WeightedEdge> weight_by_edge) {
         Map<String,Integer> weight_by_node = new HashMap<String,Integer>();
         for (WeightedEdge edge : weight_by_edge) {
