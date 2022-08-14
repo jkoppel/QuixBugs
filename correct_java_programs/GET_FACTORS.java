@@ -24,7 +24,7 @@ public class GET_FACTORS {
                 return prepend;
             }
         }
-        
+
         return new ArrayList<Integer>(Arrays.asList(n));
     }
 }

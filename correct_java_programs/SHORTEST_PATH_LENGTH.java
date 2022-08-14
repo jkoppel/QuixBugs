@@ -16,7 +16,7 @@ public class SHORTEST_PATH_LENGTH {
         Set<Node> visitedNodes = new HashSet<>();
 
         unvisitedNodes.put(startnode, 0);
-     
+
         while (!unvisitedNodes.isEmpty()) {
             Node node = getNodeWithMinDistance(unvisitedNodes);
             int distance = unvisitedNodes.get(node);

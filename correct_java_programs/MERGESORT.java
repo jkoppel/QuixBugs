@@ -12,11 +12,11 @@ import java.util.*;
  */
 public class MERGESORT {
     public static ArrayList<Integer> merge(ArrayList<Integer> left, ArrayList<Integer> right) {
-	//System.out.println(String.valueOf(left));
-	//System.out.println(String.valueOf(right));
-	//System.out.println(String.valueOf(left.getClass()));
-	//System.out.println(String.valueOf(left.get(0)));
-	//System.out.println(String.valueOf(left.get(0).getClass()));
+    //System.out.println(String.valueOf(left));
+    //System.out.println(String.valueOf(right));
+    //System.out.println(String.valueOf(left.getClass()));
+    //System.out.println(String.valueOf(left.get(0)));
+    //System.out.println(String.valueOf(left.get(0).getClass()));
         ArrayList<Integer> result = new ArrayList<Integer>(100);
         int i = 0;
         int j = 0;

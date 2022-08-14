@@ -51,7 +51,7 @@ public class Node {
     }
 
     public void setPredecessors(ArrayList<Node> predecessors) {
-    	this.predecessors = predecessors;
+        this.predecessors = predecessors;
     }
 
     public Node getSuccessor() {

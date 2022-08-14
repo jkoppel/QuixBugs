@@ -21,9 +21,9 @@ public class DEPTH_FIRST_SEARCH {
                 } else if (node == goalnode) {
                     return true;
                 } else {
-                  	nodesvisited.add(node);
+                        nodesvisited.add(node);
                     for (Node successornodes : node.getSuccessors()) {
-	                    if (search(successornodes)) { return true; }
+                        if (search(successornodes)) { return true; }
                     }
                 }
                 return false;
