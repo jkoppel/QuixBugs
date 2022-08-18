@@ -22,6 +22,53 @@ To run both defective versions of a program against their tests, as well as the 
 
 Output is printed for visual comparison.
 
+## Using pytest tests
+
+For the Python version, there are pytest tests for each program in the `python_testcases` folder. To run them, install pytest using `pip` and then, from the root of the repository, call `pytest` to run tests for a single program or target the whole directory to run every test inside it.
+
+```bash
+pip install pytest
+pytest python_testcases/test_quicksort.py
+# Or
+pytest python_testcases
+```
+
+Tests work for both buggy and correct versions of programs. The default test calls the buggy version, but there is a custom `--correct` flag that uses the correct version of a program.
+
+```bash
+pytest --correct python_testcases
+```
+
+Most of the tests run fast and finish in less than a second, but two tests are slow. The first one is the last test case of the `knapsack` program, and the second one is the fourth test case of the `levenshtein` program. The default behavior skips both these tests. For the `knapsack` test case, using the `--runslow` pytest option will include it in the running tests. However, the `levenshtein` test case is always skipped since it takes a long time to pass and is ignored by the JUnit tests as well.
+
+```bash
+$ pytest --correct --runslow python_testcases/test_knapsack.py
+
+collected 10 items
+python_testcases/test_knapsack.py ..........     [100%]
+
+========== 10 passed in 240.97s (0:04:00) ========== 
+```
+
+```bash
+$ pytest --correct python_testcases/test_knapsack.py
+
+collected 10 items
+python_testcases/test_knapsack.py ..........     [100%]
+
+========== 9 passed, 1 skipped in 0.08s ========== 
+```
+
+Some tests, such as the `bitcount` ones, need a timeout. pytest itself doesn't have a timeout mechanism, but there is a [pytest-timeout](https://github.com/pytest-dev/pytest-timeout) plugin for it. Installing pytest-timeout adds additional options to the `pytest` CLI so, for example, to timeout `bitcount` tests after five seconds, you can do like this:
+
+```bash
+pip install pytest-timeout
+pytest --timeout=5 python_testcases/test_bitcount.py
+```
+Make sure to check pytest-timeout's documentation to understand its caveats and how it handles timeouts.
+
+There is also a [pytest-xdist](https://github.com/pytest-dev/pytest-xdist) plugin that runs tests in parallel and can be used similarly to the timeout plugin.
+
 # Structure & Details
 
 The root folder holds the test driver. It deserializes the JSON testcases for a selected program, then runs them against the defective versions located in java\_programs/ and python\_programs/. The exception is graph-based programs, for which the testcases are located in the same folder as the corresponding program (they are still run with the test driver in the same manner).
