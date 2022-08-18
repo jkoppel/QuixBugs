@@ -24,7 +24,7 @@ Output is printed for visual comparison.
 
 ## Using pytest tests
 
-For the Python version, there are pytest tests for each program in the `python_testcases` folder. To run them, install pytest using `pip` and then, from the root of the repository, call `pytest` to run tests for a single program or target the whole directory to run every test inside it.
+For the Python version, there are [pytest](https://pytest.org/) tests for each program in the `python_testcases` folder. To run them, install pytest using `pip` and then, from the root of the repository, call `pytest` to run tests for a single program or target the whole directory to run every test inside it.
 
 ```bash
 pip install pytest
@@ -65,7 +65,7 @@ Some tests, such as the `bitcount` ones, need a timeout. pytest itself doesn't h
 pip install pytest-timeout
 pytest --timeout=5 python_testcases/test_bitcount.py
 ```
-Make sure to check pytest-timeout's documentation to understand its caveats and how it handles timeouts.
+Make sure to check pytest-timeout's documentation to understand its caveats and how it handles timeouts on different systems.
 
 There is also a [pytest-xdist](https://github.com/pytest-dev/pytest-xdist) plugin that runs tests in parallel and can be used similarly to the timeout plugin.
 
