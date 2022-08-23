@@ -22,6 +22,49 @@ To run both defective versions of a program against their tests, as well as the 
 
 Output is printed for visual comparison.
 
+## Using JUnit tests
+
+There are JUnit tests in the `java_testcases/junit` folder for the Java version. Running `TestsGenerator.java` can regenerate them if needed.
+
+To run these tests, you can use [Gradle](https://gradle.org/) tasks provided by the `build.gradle` file. First, install Gradle. Then,
+
+- `gradle test` can be used to run tests on the buggy programs (Runs JUnit tests from the `java_testcases/junit` folder);
+- `gradle crtTest` can be used to run tests on the correct programs (Runs JUnit tests from the `java_testcases/junit/crt_program` folder).
+
+It is also possible to run tests for a single program with the `--tests` option:
+
+```bash
+$ gradle test --tests KNAPSACK_TEST
+
+> Task :test
+
+java_testcases.junit.KNAPSACK_TEST > test_1 FAILED
+    java.lang.AssertionError at KNAPSACK_TEST.java:14
+
+java_testcases.junit.KNAPSACK_TEST > test_3 FAILED
+    java.lang.AssertionError at KNAPSACK_TEST.java:26
+
+java_testcases.junit.KNAPSACK_TEST > test_4 FAILED
+    java.lang.AssertionError at KNAPSACK_TEST.java:32
+
+java_testcases.junit.KNAPSACK_TEST > test_5 FAILED
+    java.lang.AssertionError at KNAPSACK_TEST.java:38
+
+java_testcases.junit.KNAPSACK_TEST > test_6 FAILED
+    java.lang.AssertionError at KNAPSACK_TEST.java:44
+
+java_testcases.junit.KNAPSACK_TEST > test_7 FAILED
+    java.lang.AssertionError at KNAPSACK_TEST.java:50
+
+10 tests completed, 6 failed
+```
+
+```bash
+$ gradle crtTest --tests KNAPSACK_TEST
+
+BUILD SUCCESSFUL in 4s
+```
+
 ## Using pytest tests
 
 For the Python version, there are [pytest](https://pytest.org/) tests for each program in the `python_testcases` folder. To run them, install pytest using `pip` and then, from the root of the repository, call `pytest` to run tests for a single program or target the whole directory to run every test inside it.
@@ -119,8 +162,6 @@ Programs include:
 
 \* - graph-based algorithm
 
-# To generate Junit test cases
-- Run TestsGenerator and check the generated Junit test cases in the folder of java_testcases/junit folder
 
 # Authors
 Contact Derrick Lin @drrckln, Angela Chen @angchen, or James Koppel @jkoppel for questions.
