@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ $default-branch ]
 
+  workflow_dispatch:
+
 permissions:
   contents: read
 
