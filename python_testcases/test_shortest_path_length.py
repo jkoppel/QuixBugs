@@ -59,3 +59,22 @@ def test4():
 
     result = shortest_path_length(length_by_edge, node1, node5)
     assert result == float("inf")
+
+
+def test5():
+    """Case 5: A distance update must keep the heap ordered
+    Output: 5
+    """
+
+    a = Node("a")
+    b = Node("b")
+    c = Node("c")
+    d = Node("d")
+    a.successors = [b, c, d]
+    b.successors = [c]
+    c.successors = [d]
+    lengths = {(a, b): 1, (a, c): 8, (a, d): 7, (b, c): 2, (c, d): 2}
+
+    # Lowering c from 8 to 3 must move it ahead of d (7) in the heap.
+    result = shortest_path_length(lengths, a, d)
+    assert result == 5

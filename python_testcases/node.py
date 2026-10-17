@@ -3,14 +3,14 @@ class Node:
         self,
         value=None,
         successor=None,
-        successors=[],
-        predecessors=[],
-        incoming_nodes=[],
-        outgoing_nodes=[],
+        successors=None,
+        predecessors=None,
+        incoming_nodes=None,
+        outgoing_nodes=None,
     ):
         self.value = value
         self.successor = successor
-        self.successors = successors
-        self.predecessors = predecessors
-        self.incoming_nodes = incoming_nodes
-        self.outgoing_nodes = outgoing_nodes
+        self.successors = [] if successors is None else successors
+        self.predecessors = [] if predecessors is None else predecessors
+        self.incoming_nodes = [] if incoming_nodes is None else incoming_nodes
+        self.outgoing_nodes = [] if outgoing_nodes is None else outgoing_nodes

@@ -38,7 +38,8 @@ def insert_or_update(node_heap, dist_node):
     for i, tpl in enumerate(node_heap):
         a, b = tpl
         if b == node:
-            node_heap[i] = dist_node #heapq retains sorted property
+            node_heap[i] = dist_node
+            heapify(node_heap)  # replacing an entry can break the heap order
             return None
 
     heappush(node_heap, dist_node)

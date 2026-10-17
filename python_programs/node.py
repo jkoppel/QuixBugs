@@ -1,18 +1,10 @@
 class Node:
-    def __init__(self, value=None, successor=None, successors=[], predecessors=[], incoming_nodes=[], outgoing_nodes=[]):
+    def __init__(self, value=None, successor=None, successors=None, predecessors=None, incoming_nodes=None, outgoing_nodes=None):
+        # None defaults: a [] default is one list shared by every Node built without that argument.
+        # The old successor()/successors()/predecessors() methods were shadowed by these attributes and unreachable.
         self.value = value
         self.successor = successor
-        self.successors = successors
-        self.predecessors = predecessors
-        self.incoming_nodes = incoming_nodes
-        self.outgoing_nodes = outgoing_nodes
-
-    def successor(self):
-        return self.successor
-
-    def successors(self):
-        return self.successors
-
-    def predecessors(self):
-        return self.predecessors
-
+        self.successors = [] if successors is None else successors
+        self.predecessors = [] if predecessors is None else predecessors
+        self.incoming_nodes = [] if incoming_nodes is None else incoming_nodes
+        self.outgoing_nodes = [] if outgoing_nodes is None else outgoing_nodes
